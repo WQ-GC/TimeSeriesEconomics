@@ -27,6 +27,7 @@ plot(1:TOTAL_COUNT, Y, "l")     #Plot simulated Univariate
 
 #Plot 1st order Lag Scatterplot
 plot(x = Y[2:TOTAL_COUNT], y = Y[1:TOTAL_COUNT-1])
+abline(lm(Y[2:(TOTAL_COUNT)] ~ Y[1:(TOTAL_COUNT-1)]))
 
 MAX_LAG = 100
 #Plot ACF for first 100 lags
