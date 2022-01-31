@@ -21,7 +21,7 @@ for (t in 2:TOTAL_COUNT) {
   Y[t]   <- (MA_C + err[t] + (THETA_1*err[t-1]))
 }
 
-PLOT_COUNT <- 50   #Set to only plot first 50 values
+PLOT_COUNT <- TOTAL_COUNT   #Set to only plot first 50 values
 plot(x = 1:PLOT_COUNT, y = Y[1:PLOT_COUNT], "l")
 
 #Verify Properties of MA(1)
@@ -63,4 +63,4 @@ abline(lm(Y[4:(TOTAL_COUNT)] ~ Y[1:(TOTAL_COUNT-3)]))
 
 #MAX_LAG <- TOTAL_COUNT
 MAX_LAG <- 50
-acf(x = Y, lag.max = MAX_LAG, type = "covariance")
+acf(x = Y, lag.max = MAX_LAG, type = "correlation")
