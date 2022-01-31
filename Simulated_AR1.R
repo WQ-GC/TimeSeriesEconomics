@@ -31,7 +31,7 @@ abline(lm(Y[2:(TOTAL_COUNT)] ~ Y[1:(TOTAL_COUNT-1)]))
 
 MAX_LAG = 100
 #Plot ACF for first 100 lags
-acf(Y, type = "covariance", lag.max = MAX_LAG)
+acf(Y, type = "correlation", lag.max = MAX_LAG)
 
 #Note: Observations that for AR(1), 
 #The AR(1) ACF = beta1 power k
