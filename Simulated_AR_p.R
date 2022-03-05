@@ -1,4 +1,4 @@
-#This project implements a random simulated AR(1) data
+#This project implements a random simulated AR(p) data
 #AR(p): Y[t] = beta0 + beta1Y[t_1] + beta@Y[t_2] + ... + err[t]
 library(forecast)
 library(ggplot2)
@@ -7,12 +7,13 @@ library(fpp2)
 library(car)        
 library(lmtest)
 
-set.seed(99)  #Used for Random Number Generation
 TOTAL_COUNT <- 1000     #Number of simulated trials
 
 #AR(order) is only up to 6
 #Beta is currently fixed for Stationarity
 Generate_AR <- function(order = 1, plot = "PACF") {
+  set.seed(99)  #Used for Random Number Generation
+
   #Tested Stationary Betas
   if(order == 1)  
     beta <- c(0.3)
